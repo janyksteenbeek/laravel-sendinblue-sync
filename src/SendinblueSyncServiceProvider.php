@@ -26,7 +26,7 @@ class SendinblueSyncServiceProvider extends PackageServiceProvider
     protected function registerConnectionSingleton(): void
     {
         $this->app->singleton(Configuration::class, function ($app) {
-           return Configuration::getDefaultConfiguration()->setApiKey('api-key', $app['config']['sendinblue-sync']['api-key']);
+            return Configuration::getDefaultConfiguration()->setApiKey('api-key', $app['config']['sendinblue-sync']['api-key']);
         });
 
         $this->app->singleton(ContactsApi::class, function ($app) {

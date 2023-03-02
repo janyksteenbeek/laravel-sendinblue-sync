@@ -51,7 +51,8 @@ trait IsSendinblueContact
         return $this->saveQuietly();
     }
 
-    private function mapAttributes(): array {
+    private function mapAttributes(): array
+    {
         $attributes = [];
         $mapping = config('sendinblue-sync.attributes');
 
@@ -66,8 +67,7 @@ trait IsSendinblueContact
         return $attributes;
     }
 
-
-    private abstract function saveQuietly(array $options = []);
+    abstract private function saveQuietly(array $options = []);
 
     private function createContact(): bool
     {
@@ -77,7 +77,7 @@ trait IsSendinblueContact
 
         $response = $this->getContactsApi()->createContact($contact);
 
-        if(! $response->valid()) {
+        if (! $response->valid()) {
             return false;
         }
 
