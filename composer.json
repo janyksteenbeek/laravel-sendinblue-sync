@@ -1,0 +1,60 @@
+{
+    "name": "janyksteenbeek/laravel-sendinblue-sync",
+    "description": "One-way synchronization of contact fields towards Sendinblue",
+    "keywords": [
+        "janyksteenbeek",
+        "laravel",
+        "laravel-sendinblue-sync",
+        "sendinblue",
+        "synchronization"
+    ],
+    "homepage": "https://github.com/janyksteenbeek/laravel-sendiblue-sync",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Janyk Steenbeek",
+            "email": "janyk@webmethod.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/contracts": "^9.0|^10.0",
+        "sendinblue/api-v3-sdk": "^8.4",
+        "spatie/laravel-package-tools": "^1.14.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^6.0",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^7.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Janyk\\LaravelSendinblueSync\\": "src"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Janyk\\LaravelSendinblueSync\\SendinblueSyncServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
